@@ -1,15 +1,27 @@
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #07131a;
     color: #ffffff;
-    background: url(../images/bg.JPG) no-repeat center center fixed;
+    background-image: url(../images/bg.JPG);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* garante que a imagem preencha a tela */
+    background-attachment: scroll; /* `fixed` causa problemas no iOS */
     font-family: "Roboto Mono", monospace;
     line-height: 1.4;
     padding: 32px 24px;
+    /* Tentativas para lidar com as unidades de viewport no iOS (barra dinâmica) */
+    min-height: 100vh;
+    min-height: 100dvh; /* preferível em navegadores modernos */
+    min-height: -webkit-fill-available; /* fallback para iOS Safari */
 
 }
 
 .header {
-    background-color:;
+    background-color: transparent;
     margin: 40px;
     z-index: 99;
     position: center;
@@ -19,14 +31,14 @@ body {
 }
 
 .header h1 {
-    background-color:;
+    background-color: transparent;
     margin-bottom: 16px;
     font-size: 48px;
     max-width: 100%;
 }
 
 .header .subtitle {
-    background-color:;
+    background-color: transparent;
     color: rgba(255, 255, 255, 0.7);
     font-size: 19px;
     max-width: 1024px;
@@ -34,7 +46,7 @@ body {
 }
 
 .container {
-    background-color:;
+    background-color: transparent;
     max-width: 1024px;
     margin: 0 auto;
     z-index: 99;
@@ -42,7 +54,7 @@ body {
 }
 
 .card {
-    background-color: ;
+    background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     padding: 32px;
@@ -51,7 +63,7 @@ body {
 }
 
 .card-header {
-    background-color:;
+    background-color: transparent;
     margin-bottom: 32px;
     font-size: 21px;
     text-align: center;
